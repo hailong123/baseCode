@@ -1,13 +1,8 @@
-package com.hai;
+package com.hl;
 
 import java.util.Arrays;
 
-public class ArrayList<E> {
-
-    /**
-     * 元素的数量
-     */
-    private int size;
+public class ArrayList<E> extends AbstractList<E> {
 
     /**
      * 所有的元素
@@ -15,7 +10,6 @@ public class ArrayList<E> {
     private E[] elements;
 
     private static final int DEFAULT_CAPACITY  = 2;
-    private static final int ELEMENT_NOT_FOUND = -1;
 
     public ArrayList(int capaticy) {
         capaticy = (capaticy < DEFAULT_CAPACITY) ? DEFAULT_CAPACITY: capaticy;
@@ -181,22 +175,6 @@ public class ArrayList<E> {
         }
 
         elements = newElements;
-    }
-
-    private void rangeCheck(int index) {
-        if (index >= size || index < 0) {
-            outOfBounds(index);
-        }
-    }
-
-    private void rangeCheckForAdd(int index) {
-        if (index > size || index < 0) {
-            outOfBounds(index);
-        }
-    }
-
-    private void outOfBounds(int index) {
-        throw new IndexOutOfBoundsException("Index:" + index + "size:" + size);
     }
 
     @Override
