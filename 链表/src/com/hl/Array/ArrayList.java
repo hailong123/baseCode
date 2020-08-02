@@ -1,4 +1,6 @@
-package com.hl;
+package com.hl.Array;
+
+import com.hl.Base.AbstractList;
 
 import java.util.Arrays;
 
@@ -120,8 +122,8 @@ public class ArrayList<E> extends AbstractList<E> {
 
         E old = elements[index];
 
-        for (int i = index; i <= size - 1; i++) {
-            elements[i] = elements[i+1];
+        for (int i = index + 1; i <= size - 1; i++) {
+            elements[i - 1] = elements[i];
         }
 
         elements[--size] = null;

@@ -1,4 +1,4 @@
-package com.hl;
+package com.hl.list;
 
 public interface List <E> {
 
