@@ -8,11 +8,13 @@ import com.hl.Single.SingleLinkList;
 
 public class Main {
 
-    static void test(AbstractList<Integer> list) {
-        list.add(11);
-        list.add(22);
-        list.add(33);
-        list.add(44);
+    static ListNode test(ListNode<Integer> list) {
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+//        list.add(33);
+//        list.add(44);
 
 //        list.add(0, 55);
 //        list.add(2, 66);
@@ -21,8 +23,7 @@ public class Main {
 //        list.remove(0);
 //        list.remove(2);
 //        list.remove(list.size() - 1);
-
-        System.out.println(list);
+        return list;
     }
 
     static void josephus() {
@@ -48,7 +49,16 @@ public class Main {
 //        test(new SingleCircleLinkedList<>());
 //        test(new SingleLinkList<>());
 //        test(new CircleLinkedList<>());
-        josephus();
+//        josephus();
+
+        ListNode singleLinkList = test(new ListNode<>());
+
+        _18_删除链表的节点 node = new _18_删除链表的节点();
+
+       ListNode tmp = node.deleteNode(singleLinkList,5);
+
+        System.out.println(tmp);
+
     }
 
 }

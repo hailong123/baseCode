@@ -5,7 +5,7 @@ public class ListNode<T> {
     int val;
     ListNode next;
 
-    ListNode(int x, Object o) {
+    ListNode(int x) {
         val = x;
     }
 }

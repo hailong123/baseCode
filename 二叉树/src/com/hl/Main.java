@@ -21,6 +21,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        test2();
+    }
+
+    public static void test2() {
 
         Integer data[] = new Integer[]{
                 7,
@@ -29,22 +33,6 @@ public class Main {
                 2,
                 5,
                 8,
-                11,
-                1,
-                3,
-                10,
-                12,
-                34,
-                36,
-                87,
-                54,
-                35,
-                37,
-                38,
-                39,
-                40,
-                44,
-                64,
                 66
         };
 
@@ -54,9 +42,16 @@ public class Main {
             bst.add(data[i]);
         }
 
-        bst.levelOrderTraversal(bst.getRoot());
+       // bst.levelOrderTraversal(bst.getRoot());
 
-        System.out.println("bst 高度为: " + bst.height());;
+        //System.out.println("bst 高度为: " + bst.height());;
+
+        bst.remove(7);
+
+        bst.levelOrderTraversal(bst.getRoot());
+    }
+
+    public static void test1() {
 
 //        bst.levelOrder(new BinarySearchTree.Visitor<Integer>() {
 //            @Override
