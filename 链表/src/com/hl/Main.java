@@ -6,25 +6,9 @@ import com.hl.Circle.SingleCircleLinkedList;
 import com.hl.DoubleList.LinkList;
 import com.hl.Single.SingleLinkList;
 
+import java.util.HashMap;
+
 public class Main {
-
-    static ListNode test(ListNode<Integer> list) {
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
-//        list.add(33);
-//        list.add(44);
-
-//        list.add(0, 55);
-//        list.add(2, 66);
-//        list.add(list.size(), 77);
-//
-//        list.remove(0);
-//        list.remove(2);
-//        list.remove(list.size() - 1);
-        return list;
-    }
 
     static void josephus() {
         CircleLinkedList<Integer> list = new CircleLinkedList<>();
@@ -44,21 +28,31 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        test(new ArrayList<>());
-//        test(new LinkList<>());
-//        test(new SingleCircleLinkedList<>());
-//        test(new SingleLinkList<>());
-//        test(new CircleLinkedList<>());
-//        josephus();
 
-        ListNode singleLinkList = test(new ListNode<>());
+    }
 
-        _18_删除链表的节点 node = new _18_删除链表的节点();
 
-       ListNode tmp = node.deleteNode(singleLinkList,5);
+    public ListNode removeDuplicateNodes(ListNode head) {
 
-        System.out.println(tmp);
+        HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
 
+        ListNode headNode = new ListNode(0);
+        headNode.next = head;
+
+        ListNode node = headNode;
+        Integer index = 0;
+
+        while (node.next != null) {
+            if (hashMap.get(index) != null) {
+                node.next = node.next.next.next;
+            } else {
+                hashMap.put(index, node.next.val);
+                node.next = node.next.next;
+            }
+            index++;
+        }
+
+        return headNode.next;
     }
 
 }
