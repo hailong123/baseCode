@@ -6,6 +6,7 @@ import com.hl.Circle.SingleCircleLinkedList;
 import com.hl.DoubleList.LinkList;
 import com.hl.Single.SingleLinkList;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
@@ -29,30 +30,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-    }
+//        int [] arrayList = {22,33,4,5,6,7,77,87,565,434,3423,234,234,234,234,234,234,234234,23,423,42,342,3};
+            int [] arrayList = {56,9,33,19,2,37,34};
 
+            //冒泡排序
+//        for (int y = arrayList.length; y > 0; y--) {
+//            for (int x = 1; x < y; x++) {
+//                if (arrayList[x] < arrayList[x - 1]) {
+//                    int tmp = arrayList[x];
+//                    arrayList[x] = arrayList[x-1];
+//                    arrayList[x-1] = tmp;
+//                }
+//            }
+//        }
 
-    public ListNode removeDuplicateNodes(ListNode head) {
-
-        HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
-
-        ListNode headNode = new ListNode(0);
-        headNode.next = head;
-
-        ListNode node = headNode;
-        Integer index = 0;
-
-        while (node.next != null) {
-            if (hashMap.get(index) != null) {
-                node.next = node.next.next.next;
-            } else {
-                hashMap.put(index, node.next.val);
-                node.next = node.next.next;
+        //快速排序
+        int end = arrayList.length;
+        for (int x = end; x >= 1; x--) {
+            int index = 0;
+            for (int y = 0; y < x; y++) {
+                if (arrayList[index] < arrayList[y]) {
+                    index = y;
+                }
             }
-            index++;
+
+            int tmp = arrayList[x - 1];
+            arrayList[x - 1] = arrayList[index];
+            arrayList[index] = tmp;
         }
 
-        return headNode.next;
+        for (int i : arrayList) {
+            System.out.println("_"+i);
+        }
     }
-
 }
